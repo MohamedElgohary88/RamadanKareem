@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layoutDescription="@xml/activity_main_scene"
+    tools:context=".MainActivity">
+
+    <com.airbnb.lottie.LottieAnimationView
+        android:id="@+id/lottie_one"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:lottie_rawRes="@raw/ramadan_2"
+        android:scaleType="fitStart"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:lottie_autoPlay="true"
+        app:lottie_loop="true" />
+    <TextView
+        android:id="@+id/swipe"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Swipe to Show prayers time"
+        android:fontFamily="casual"
+        android:textColor="@color/blue"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/lottie_one"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_marginTop="32dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/lottie_one"
+        app:layout_constraintVertical_weight="1">
+
+        <com.airbnb.lottie.LottieAnimationView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            app:lottie_rawRes="@raw/mosque"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:lottie_autoPlay="true"
+            app:lottie_loop="true" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:elevation="16dp"
+            app:cardCornerRadius="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:id="@+id/image_fajr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/fajr"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/fajr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Fajr"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_fajr"
+                    app:layout_constraintEnd_toStartOf="@+id/fajr_time"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/image_fajr"
+                    app:layout_constraintTop_toTopOf="@+id/image_fajr" />
+
+                <TextView
+                    android:id="@+id/fajr_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="64dp"
+                    android:text="4:36 AM"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_fajr"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintTop_toTopOf="@+id/image_fajr" />
+
+
+                <ImageView
+                    android:id="@+id/image_sunrise"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/sunrise"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_fajr" />
+
+                <TextView
+                    android:id="@+id/sunrise"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Sunrise"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_sunrise"
+                    app:layout_constraintEnd_toStartOf="@+id/sunrise_time"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/image_sunrise"
+                    app:layout_constraintTop_toTopOf="@+id/image_sunrise" />
+
+                <TextView
+                    android:id="@+id/sunrise_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="64dp"
+                    android:text="6:03 AM"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_sunrise"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/image_sunrise" />
+
+
+                <ImageView
+                    android:id="@+id/image_dhuhr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/dhuhr"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_sunrise" />
+
+
+                <TextView
+                    android:id="@+id/dhuhr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Dhuhr"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_dhuhr"
+                    app:layout_constraintEnd_toStartOf="@+id/dhuhr_time"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/image_dhuhr"
+                    app:layout_constraintTop_toTopOf="@+id/image_dhuhr" />
+
+                <TextView
+                    android:id="@+id/dhuhr_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="64dp"
+                    android:text="12:03 PM"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_dhuhr"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/image_dhuhr" />
+
+
+                <ImageView
+                    android:id="@+id/image_asr"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/asr"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_dhuhr" />
+
+
+                <TextView
+                    android:id="@+id/asr"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Asr"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_asr"
+                    app:layout_constraintEnd_toStartOf="@+id/asr_time"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/image_asr"
+                    app:layout_constraintTop_toTopOf="@+id/image_asr" />
+
+                <TextView
+                    android:id="@+id/asr_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="64dp"
+                    android:text="3:29 PM"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_asr"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/image_asr" />
+
+
+                <ImageView
+                    android:id="@+id/image_maghrib"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/maghrib"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_asr" />
+
+
+                <TextView
+                    android:id="@+id/maghrib"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Maghrib"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_maghrib"
+                    app:layout_constraintEnd_toStartOf="@+id/maghrib_time"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/image_maghrib"
+                    app:layout_constraintTop_toTopOf="@+id/image_maghrib" />
+
+
+                <TextView
+                    android:id="@+id/maghrib_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="64dp"
+                    android:text="6:04 PM"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_maghrib"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/image_maghrib" />
+
+
+                <ImageView
+                    android:id="@+id/image_isha"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="48dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_marginTop="16dp"
+                    android:src="@drawable/night"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/image_maghrib" />
+
+                <TextView
+                    android:id="@+id/isha"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="Isha"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_isha"
+                    app:layout_constraintEnd_toStartOf="@+id/isha_time"
+                    app:layout_constraintHorizontal_weight="1"
+                    app:layout_constraintStart_toEndOf="@+id/image_isha"
+                    app:layout_constraintTop_toTopOf="@+id/image_isha" />
+
+                <TextView
+                    android:id="@+id/isha_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="64dp"
+                    android:text="7:22 PM"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="18sp"
+                    app:layout_constraintBottom_toBottomOf="@+id/image_isha"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="@+id/image_isha" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.motion.widget.MotionLayout>
